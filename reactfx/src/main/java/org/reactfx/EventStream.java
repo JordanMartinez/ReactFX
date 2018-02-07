@@ -1711,20 +1711,6 @@ public interface EventStream<T> extends Observable<Consumer<? super T>> {
     }
 
     /**
-     * Returns a clone of this event stream guarded by the given guardians.
-     * The returned event stream emits the same events as this event stream.
-     * In addition to that, the emission of each event is guarded by the given
-     * guardians: before the emission, guards are acquired in the given order;
-     * after the emission, previously acquired guards are released in reverse
-     * order.
-     * @deprecated Use {@link #suspenderOf(Suspendable)} instead.
-     */
-    @Deprecated
-    default EventStream<T> guardedBy(Guardian... guardians) {
-        return suspenderOf(Guardian.combine(guardians)::guard);
-    }
-
-    /**
      * Returns an event stream that emits the same events as this event stream,
      * but before each emission, suspends the given {@linkplain Suspendable}
      * and unsuspends it after the emission has completed.

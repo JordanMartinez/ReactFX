@@ -7,7 +7,8 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 /**
- * Accumulation map.
+ * Accumulation map. Maps a given key to an accumulated value and applies a reduction on the accumulated value
+ * (if any) when a new value is added to the map that corresponds to that key
  *
  * @param <K> key type
  * @param <V> type of individual (non-accumulated) values

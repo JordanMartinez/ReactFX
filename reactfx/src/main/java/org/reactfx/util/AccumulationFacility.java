@@ -7,6 +7,9 @@ import org.reactfx.collection.ListChangeAccumulator;
 import org.reactfx.collection.ListModificationSequence;
 import org.reactfx.collection.QuasiListChange;
 
+/**
+ * An interface that generalizes the {@code reduce(A initialValue, BiFunction<B, A, B> reducer)} pattern
+ */
 public interface AccumulationFacility<T, A> {
     A initialAccumulator(T value);
     A reduce(A accum, T value);

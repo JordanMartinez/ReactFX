@@ -1,5 +1,10 @@
 package org.reactfx.util;
 
+/**
+ * In the context of a singly-linked list, determines whether there is an empty list of value ({@link #ZERO}),
+ * a list with a single value ({@link #ONE}) that can be gotten via {@code list.head()}
+ * or whether there are multiple values ({@link #MANY}) that can be gotten via {@code list.tail()}
+ */
 public enum AccumulatorSize {
     ZERO, ONE, MANY;
 
